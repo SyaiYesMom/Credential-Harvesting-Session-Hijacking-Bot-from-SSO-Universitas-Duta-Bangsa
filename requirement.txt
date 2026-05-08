@@ -1,0 +1,7 @@
+opencv-python
+numpy
+ddddocr
+beautifulsoup4
+curl_cffi
+altcha
+python-telegram-bot
