@@ -1,49 +1,114 @@
-# UDB SSO Telegram Bot Automation
+<div align="center">
 
-Proyek ini adalah bot Telegram yang dirancang untuk mengotomatisasi proses autentikasi *Single Sign-On* (SSO) pada portal mahasiswa Universitas Duta Bangsa (UDB). Melalui bot ini, pengguna dapat dengan mudah berinteraksi dengan portal akademis untuk mengekstrak dan menampilkan informasi seperti biodata serta status angket langsung melalui antarmuka pesan Telegram.
+```
+██╗   ██╗██████╗ ██████╗     ███████╗███████╗ ██████╗     ██████╗  ██████╗ ████████╗
+██║   ██║██╔══██╗██╔══██╗    ██╔════╝██╔════╝██╔═══██╗    ██╔══██╗██╔═══██╗╚══██╔══╝
+██║   ██║██║  ██║██████╔╝    ███████╗███████╗██║   ██║    ██████╔╝██║   ██║   ██║   
+██║   ██║██║  ██║██╔══██╗    ╚════██║╚════██║██║   ██║    ██╔══██╗██║   ██║   ██║   
+╚██████╔╝██████╔╝██████╔╝    ███████║███████║╚██████╔╝    ██████╔╝╚██████╔╝   ██║   
+ ╚═════╝ ╚═════╝ ╚═════╝     ╚══════╝╚══════╝ ╚═════╝     ╚═════╝  ╚═════╝   ╚═╝   
+```
 
-## Fitur Utama
+###  Telegram Bot · SSO Automation · UDB Portal
 
-- **Autentikasi SSO**: Mengotomatisasi proses login ke sistem portal mahasiswa.
-- **Penyelesaian CAPTCHA Otomatis**: Menggunakan teknologi Optical Character Recognition (OCR) dengan pustaka `ddddocr`, yang dipadukan dengan pemrosesan gambar (*image processing*) melalui `OpenCV` untuk membersihkan derau (*noise*) dan membaca teks CAPTCHA secara cerdas.
-- **Penyelesaian Altcha PoW**: Mengidentifikasi dan memecahkan tantangan kriptografi *Proof-of-Work* (Altcha) yang diperlukan saat proses login secara mulus.
-- **Manajemen Sesi dan Jaringan Lanjutan**: Menggunakan `curl_cffi` yang mampu memalsukan TLS *fingerprint*, sehingga membuat request nampak seperti dari peramban (browser) asli untuk mencegah pemblokiran sesi.
-- **Menu Ekstraksi Data**:
-  - **Biodata**: Menarik informasi profil mahasiswa yang sedang login.
-  - **Cek Angket**: Mengecek ketersediaan angket yang ada pada portal.
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram-Bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-Automation-45ba4b?style=for-the-badge&logo=playwright&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 
-## Persyaratan Sistem
+> *Automate SSO authentication, bypass CAPTCHA, and extract student data — all from Telegram.*
 
-- Python 3.8 atau yang lebih baru.
-- Token API Bot Telegram (bisa Anda dapatkan dari [BotFather](https://t.me/BotFather)).
+</div>
 
-## Instalasi
+---
 
-1. **Unduh Repositori**
-   Pastikan seluruh file skrip (seperti `main.py` dan `requirements.txt`) berada dalam satu direktori kerja Anda.
+##  Overview
 
-2. **Instalasi Pustaka/Dependensi**
-   Buka *Command Prompt* atau terminal pada direktori proyek, lalu jalankan perintah berikut untuk menginstal semua *requirements*:
-   ```bash
-   pip install -r requirements.txt
-   ```
+This project is a **Telegram bot** designed to automate the **Single Sign-On (SSO)** authentication process on the student portal of **Universitas Duta Bangsa (UDB)**. Through this bot, users can easily interact with the academic portal to extract and display information such as student profile data and survey status directly through the Telegram messaging interface.
 
-## Konfigurasi dan Penggunaan
+---
 
-1. **Konfigurasi Token**
-   Buka file `main.py` menggunakan teks editor Anda, lalu pastikan Anda menyesuaikan variabel `BOT_TOKEN` dengan token bot milik Anda.
-   ```python
-   BOT_TOKEN = "YOUR TELEGRAM BOT TOKEN"
-   ```
+##  Key Features
 
-2. **Menjalankan Bot**
-   Jalankan skrip utama melalui terminal:
-   ```bash
-   python main.py
-   ```
-   Jika sukses, akan muncul pesan `Bot Telegram berjalan...` di terminal.
+| Feature | Description |
+|---|---|
+|  **SSO Authentication** | Automates the login process to the student portal system |
+|  **CAPTCHA Solver** | OCR-powered via `ddddocr` + `OpenCV` noise cleaning |
+|  **Altcha PoW Solver** | Solves cryptographic Proof-of-Work challenges seamlessly |
+|  **TLS Fingerprint Spoof** | Uses `curl_cffi` to mimic real browser requests |
+|  **Profile Data** | Retrieves logged-in student's profile information |
+|  **Survey Check** | Checks survey availability on the portal |
 
-3. **Interaksi via Telegram**
-   - Cari bot Anda di aplikasi Telegram dan kirimkan perintah `/start`.
-   - Bot akan memproses pengunduhan dan pemecahan *captcha*, lalu akan meminta **NIM** dan **Password** portal SSO Anda.
-   - Jika autentikasi berhasil, menu *inline* akan ditampilkan. Anda dapat menekan tombol menu yang ada untuk melihat Biodata atau mengecek Angket.
+---
+
+##  System Requirements
+
+-  **Python** 3.8 or newer
+-  **Telegram Bot Token** — get yours from [@BotFather](https://t.me/BotFather)
+
+---
+
+##  Installation
+
+**1. Clone or Download the Repository**
+
+```bash
+git clone https://github.com/SyaiYesMom/Credential-Harvesting-Session-Hijacking-Bot-from-SSO-Universitas-Duta-Bangsa.git
+cd Credential-Harvesting-Session-Hijacking-Bot-from-SSO-Universitas-Duta-Bangsa
+```
+
+**2. Install Dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+##  Configuration & Usage
+
+**1. Set Your Bot Token**
+
+Open `main.py` and replace the placeholder with your Telegram Bot Token:
+
+```python
+BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN_HERE"
+```
+
+**2. Run the Bot**
+
+```bash
+python main.py
+```
+
+> If successful, you'll see: `Bot Telegram berjalan...` in the terminal.
+
+**3. Interact via Telegram**
+
+```
+/start  →  Bot downloads & solves CAPTCHA
+        →  Asks for NIM + Password
+        →  Auth success → Inline menu appears
+               ├──  Profile Data
+               └──  Survey Check
+```
+
+---
+
+##  Tech Stack
+
+![curl_cffi](https://img.shields.io/badge/curl__cffi-TLS%20Spoof-black?style=flat-square&logo=curl)
+![ddddocr](https://img.shields.io/badge/ddddocr-OCR-orange?style=flat-square)
+![OpenCV](https://img.shields.io/badge/OpenCV-Image%20Processing-5C3EE8?style=flat-square&logo=opencv)
+![python-telegram-bot](https://img.shields.io/badge/python--telegram--bot-Framework-blue?style=flat-square&logo=telegram)
+
+---
+
+<div align="center">
+
+Made with 🖤 by [SyaiYesMom](https://github.com/SyaiYesMom)
+
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=SyaiYesMom.udb-sso-bot)
+
+</div>
